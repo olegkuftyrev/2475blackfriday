@@ -1,5 +1,6 @@
 import { ThemeToggle } from '@/components/theme-toggle'
 import { ItemsChecklist } from '@/components/items-checklist'
+import { BoHPlan } from '@/components/boh-plan'
 
 export default function Home() {
   return (
@@ -20,6 +21,10 @@ export default function Home() {
         <div className="space-y-6">
           <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
             <ItemsChecklist />
+          </div>
+          
+          <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
+            <BoHPlan />
           </div>
         </div>
       </div>

@@ -50,8 +50,8 @@ export const itemsChecklistData = [
   {
     id: 9,
     item: "Iron Man with 3 directions (FOH)",
-    checked: false,
-    contributor: null
+    checked: true,
+    contributor: "Israel"
   },
   {
     id: 10,
