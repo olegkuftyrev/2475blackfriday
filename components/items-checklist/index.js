@@ -79,6 +79,12 @@ export function ItemsChecklist() {
           if (!groupedItems[categoryKey]) return null
           
           const categoryItems = groupedItems[categoryKey]
+          // Sort items: unchecked first, checked at bottom
+          const sortedItems = [...categoryItems].sort((a, b) => {
+            if (a.checked && !b.checked) return 1
+            if (!a.checked && b.checked) return -1
+            return 0
+          })
           const categoryChecked = categoryItems.filter(item => item.checked).length
           const categoryTotal = categoryItems.length
 
@@ -94,7 +100,7 @@ export function ItemsChecklist() {
               </div>
               
               <div className="space-y-2">
-                {categoryItems.map((item) => (
+                {sortedItems.map((item) => (
                   <div
                     key={item.id}
                     className="flex items-start gap-3 p-3 md:p-4 rounded-lg border border-border bg-card transition-colors"
