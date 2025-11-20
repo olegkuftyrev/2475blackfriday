@@ -14,7 +14,7 @@ export function FoHPlan() {
     { id: 3, title: "Register 2", am: formatPerson("Ngan"), pm: formatPerson("") },
     { id: 4, title: "Register 3", am: formatPerson("Hermela"), pm: formatPerson("Hermela") },
     { id: 5, title: "Position 1", am: formatPerson("Joanna"), pm: formatPerson("Joanna") },
-    { id: 6, title: "Position 2", am: formatPerson(""), pm: formatPerson("") },
+    { id: 6, title: "Position 2", am: formatPerson(""), pm: formatPerson("Alexa") },
     { id: 7, title: "Position 3", am: formatPerson("Aiperi"), pm: formatPerson("") },
   ]
 
@@ -61,7 +61,9 @@ export function FoHPlan() {
                     ? "PM: 5:00-10:00"
                     : position.title === "Position 1"
                       ? "PM: 5:00-10:00"
-                      : "PM:"}
+                      : position.title === "Position 2"
+                        ? "PM: 2:00-10:00"
+                        : "PM:"}
             </span>
             <span className="text-base font-semibold text-foreground">
               {position.pm || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
