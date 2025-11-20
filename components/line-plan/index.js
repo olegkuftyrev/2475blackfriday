@@ -11,7 +11,7 @@ export function LinePlan() {
   const positions = [
     { id: 1, title: "Director", am: formatPerson("Valeria", "PX3829"), pm: formatPerson(""), focus: "Navigate Guest and Manage the line", responsibility: "Manage line flow, Supply Line Buster" },
     { id: 2, title: "Line Buster", am: formatPerson("Maksim", "PX1911"), pm: formatPerson("Maksim", "PX1911"), focus: "Break line bottlenecks", responsibility: "OFS Tablet, Sticker Notes, Menu" },
-    { id: 3, title: "Drink & Utensils", am: formatPerson(""), pm: formatPerson("PIC", "PX1911"), pm2: formatPerson(""), focus: "Prepare drinks and utensils", responsibility: "Keep drink station and utensils stocked, prepare beverages" },
+    { id: 3, title: "Drink & Utensils", am: formatPerson(""), pm: formatPerson("Finn", "PX1911"), pm2: formatPerson(""), focus: "Prepare drinks and utensils", responsibility: "Keep drink station and utensils stocked, prepare beverages" },
   ]
 
   const PositionCard = ({ position, fullWidth = false }) => (
