@@ -11,7 +11,7 @@ export function LinePlan() {
   const positions = [
     { id: 1, title: "Director", am: formatPerson("Valeria", "PX3829"), pm: formatPerson("") },
     { id: 2, title: "Line Buster", am: formatPerson("Maksim", "PX1911"), pm: formatPerson("Maksim", "PX1911") },
-    { id: 3, title: "Drink & Utensils", am: formatPerson(""), pm: formatPerson("") },
+    { id: 3, title: "Drink & Utensils", am: formatPerson(""), pm: formatPerson("PIC", "PX1911"), pm2: formatPerson("") },
   ]
 
   const PositionCard = ({ position, fullWidth = false }) => (
@@ -31,7 +31,9 @@ export function LinePlan() {
               ? "AM: 9:00-5:00"
               : position.title === "Line Buster"
                 ? "AM: 9:00-5:00"
-                : "AM:"}
+                : position.title === "Drink & Utensils"
+                  ? "AM: 10:00-2:00"
+                  : "AM:"}
           </span>
           <span className="text-base font-semibold text-foreground">
             {position.am || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
@@ -42,12 +44,25 @@ export function LinePlan() {
           <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
             {position.title === "Line Buster"
               ? "PM: 5:00-10:00"
-              : "PM:"}
+              : position.title === "Drink & Utensils"
+                ? "PM: 2:00-7:00"
+                : "PM:"}
           </span>
           <span className="text-base font-semibold text-foreground">
             {position.pm || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
           </span>
         </div>
+        
+        {position.title === "Drink & Utensils" && (
+          <div className="flex items-center justify-between py-1.5">
+            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
+              PM2: 7:00-10:00
+            </span>
+            <span className="text-base font-semibold text-foreground">
+              {position.pm2 || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
+            </span>
+          </div>
+        )}
       </div>
     </div>
   )
