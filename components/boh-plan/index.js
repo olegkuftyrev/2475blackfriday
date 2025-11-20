@@ -41,15 +41,17 @@ export function BoHPlan() {
       <div className="space-y-3">
         <div className="flex items-center justify-between py-1.5">
           <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-            {position.title === "Restock & Runner"
-              ? "AM: 9:30-4:00"
-              : position.title === "Dishes"
+            {position.title === "Prep & PIC"
+              ? "AM: 09:00-5:00"
+              : position.title === "Restock & Runner"
                 ? "AM: 9:30-4:00"
-                : position.title === "Stir Fry Cook" || position.title === "Fry Cook"
-                  ? "AM: 9:30-5:00" 
-                  : position.am && position.am.includes("Luis") 
-                    ? "AM: 9:30-6:00" 
-                    : "AM:"}
+                : position.title === "Dishes"
+                  ? "AM: 9:30-4:00"
+                  : position.title === "Stir Fry Cook" || position.title === "Fry Cook"
+                    ? "AM: 9:30-5:00" 
+                    : position.am && position.am.includes("Luis") 
+                      ? "AM: 9:30-6:00" 
+                      : "AM:"}
           </span>
           <span className="text-base font-semibold text-foreground">
             {position.am || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
@@ -58,13 +60,15 @@ export function BoHPlan() {
         
         <div className="flex items-center justify-between py-1.5">
           <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-            {position.title === "Restock & Runner"
-              ? "PM: 4:00-10:00"
-              : position.title === "Dishes"
+            {position.title === "Prep & PIC"
+              ? "PM: 5:00-10:00"
+              : position.title === "Restock & Runner"
                 ? "PM: 4:00-10:00"
-                : position.title === "Stir Fry Cook" || position.title === "Fry Cook" 
-                  ? "PM: 5:00-10:00" 
-                  : "PM:"}
+                : position.title === "Dishes"
+                  ? "PM: 4:00-10:00"
+                  : position.title === "Stir Fry Cook" || position.title === "Fry Cook" 
+                    ? "PM: 5:00-10:00" 
+                    : "PM:"}
           </span>
           <span className="text-base font-semibold text-foreground">
             {position.pm || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}

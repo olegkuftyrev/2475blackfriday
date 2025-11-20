@@ -8,7 +8,7 @@ export function FoHPlan() {
   }
 
   // Front of House positions - first one takes full row, rest in 3 columns
-  const firstPosition = { id: 1, title: "PIC", am: formatPerson("Aaron"), pm: formatPerson("Aaron") }
+  const firstPosition = { id: 1, title: "PIC", am: formatPerson(""), pm: formatPerson("") }
   const positions = [
     { id: 2, title: "Register 1", am: formatPerson("Gita"), pm: formatPerson("Gita") },
     { id: 3, title: "Register 2", am: formatPerson("Ngan"), pm: formatPerson("") },
