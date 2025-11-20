@@ -21,7 +21,7 @@ export function BoHPlan() {
   // Left column: Sides, Fryer & Grill, Fry Cook, Stir Fry Cook
   // Right column: Dishes, Restock & Runner, Signal Lead
   const positions = [
-    { id: 1, title: "Sides", am: formatPerson("Luis"), pm: null, focus: "Make M1, R1 & R2", responsibility: "Keep all side items ready and fresh throughout shift" },
+    { id: 1, title: "Sides", am: formatPerson("Luis"), pm: formatPerson("Chi", "PX1911"), focus: "Make M1, R1 & R2", responsibility: "Keep all side items ready and fresh throughout shift" },
     { id: 4, title: "Dishes", am: formatPerson("Ming"), pm: formatPerson("Ken"), focus: "Wash dishes and clean", responsibility: "Maintain clean floors, dishes & utensils" },
     { id: 3, title: "Fryer & Grill", am: null, pm: null, focus: "Cook on fryer and grill", responsibility: "Prepare all fried and grilled food items to order" },
     { id: 6, title: "Restock & Runner", am: formatPerson("Day"), pm: formatPerson("Day"), focus: "Restock supplies and run food", responsibility: "Keep all stations supplied, run food to front" },
