@@ -9,9 +9,9 @@ export function OLOPlan() {
 
   // OLO (Online Order) positions
   const positions = [
-    { id: 1, title: "OLO Runner", am: formatPerson("Vanessa"), pm: formatPerson("Vanessa") },
-    { id: 2, title: "OLO Deliver", am: formatPerson("Jamileth"), pm: formatPerson("Jamileth") },
-    { id: 3, title: "OLO Table", am: formatPerson(""), pm: formatPerson("") },
+    { id: 1, title: "OLO Runner", am: formatPerson("Vanessa"), pm: formatPerson("Vanessa"), focus: "Run online orders", responsibility: "Pick up orders from kitchen and deliver to customers" },
+    { id: 2, title: "OLO Deliver", am: formatPerson("Jamileth"), pm: formatPerson("Jamileth"), focus: "Deliver online orders", responsibility: "Ensure timely delivery of online orders to customers" },
+    { id: 3, title: "OLO Table", am: formatPerson(""), pm: formatPerson(""), focus: "Organize online orders", responsibility: "Manage order table, organize orders for pickup" },
   ]
 
   const PositionCard = ({ position, fullWidth = false }) => (
@@ -20,36 +20,59 @@ export function OLOPlan() {
         fullWidth ? 'col-span-1 md:col-span-3' : ''
       }`}
     >
-      <div className="font-semibold text-lg mb-4 pb-3 border-b border-border text-foreground">
+      <div className="font-semibold text-lg mb-2 text-foreground">
         {position.title}
       </div>
       
-      <div className="space-y-3">
-        <div className="flex items-center justify-between py-1.5">
-          <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-            {position.title === "OLO Runner"
-              ? "AM: 11:00-5:00"
-              : position.title === "OLO Deliver"
-                ? "AM: 10:30-5:00"
-                : "AM:"}
-          </span>
-          <span className="text-base font-semibold text-foreground">
+      {position.focus && (
+        <div className="text-sm text-muted-foreground mb-4 pb-3 border-b border-border">
+          {position.focus}
+        </div>
+      )}
+      
+      {!position.focus && (
+        <div className="mb-4 pb-3 border-b border-border"></div>
+      )}
+      
+      <div className="space-y-4">
+        <div>
+          <div className="flex items-center justify-between mb-1">
+            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Morning Shift</span>
+            <span className="text-sm text-foreground">
+              {position.title === "OLO Runner"
+                ? "11:00am-05:00pm"
+                : position.title === "OLO Deliver"
+                  ? "10:30am-05:00pm"
+                  : ""}
+            </span>
+          </div>
+          <div className="text-base font-semibold text-foreground">
             {position.am || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
-          </span>
+          </div>
         </div>
         
-        <div className="flex items-center justify-between py-1.5">
-          <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-            {position.title === "OLO Runner"
-              ? "PM: 5:00-10:00"
-              : position.title === "OLO Deliver"
-                ? "PM: 5:00-10:00"
-                : "PM:"}
-          </span>
-          <span className="text-base font-semibold text-foreground">
+        <div>
+          <div className="flex items-center justify-between mb-1">
+            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Evening Shift</span>
+            <span className="text-sm text-foreground">
+              {position.title === "OLO Runner"
+                ? "05:00pm-10:00pm"
+                : position.title === "OLO Deliver"
+                  ? "05:00pm-10:00pm"
+                  : ""}
+            </span>
+          </div>
+          <div className="text-base font-semibold text-foreground">
             {position.pm || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
-          </span>
+          </div>
         </div>
+        
+        {position.responsibility && (
+          <div className="pt-2">
+            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1">Responsibility:</div>
+            <div className="text-sm text-foreground">{position.responsibility}</div>
+          </div>
+        )}
       </div>
     </div>
   )
@@ -57,7 +80,7 @@ export function OLOPlan() {
   return (
     <div className="w-full">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold mb-2">OLO Plan</h2>
+        <h2 className="text-2xl font-bold mb-2">OLO Team</h2>
         <p className="text-sm text-muted-foreground mb-4">
           Online Order shift assignments
         </p>

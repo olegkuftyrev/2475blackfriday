@@ -53,6 +53,11 @@ export function ItemsChecklist() {
     .map(([name, count]) => ({ name, count }))
     .sort((a, b) => b.count - a.count)
 
+  // Check if there's a clear winner (only show if there's a unique top contributor)
+  const hasWinner = topContributors.length > 0 && 
+    topContributors[0].count > 0 && 
+    (topContributors.length === 1 || topContributors[0].count > topContributors[1].count)
+
   return (
     <div className="w-full">
       <div className="mb-4">
@@ -139,7 +144,7 @@ export function ItemsChecklist() {
         })}
       </div>
 
-      {topContributors.length > 0 && (
+      {hasWinner && (
         <div className="mt-8 pt-6 border-t border-border">
           <h3 className="text-xl font-bold mb-4">Top Contributors</h3>
           <div className="space-y-3">

@@ -2,8 +2,8 @@ export const itemsChecklistData = [
   {
     id: 1,
     item: "Trays for OLO (FOH)",
-    checked: false,
-    contributor: null
+    checked: true,
+    contributor: "Katelyn"
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ export const itemsChecklistData = [
   },
   {
     id: 5,
-    item: "12x Metal Pands (9\") (BOH)",
+    item: "9x Metal Pans (9\") (BOH)",
     checked: false,
     contributor: null
   },
@@ -68,12 +68,12 @@ export const itemsChecklistData = [
   {
     id: 12,
     item: "px2014 OLO / Rice Engineered (FOH)",
-    checked: false,
-    contributor: null
+    checked: true,
+    contributor: "Mirhan"
   },
   {
     id: 13,
-    item: "Wok Handles (BOH)",
+    item: "Gas Handle x1 (BOH)",
     checked: false,
     contributor: null
   },

@@ -9,9 +9,9 @@ export function LinePlan() {
 
   // Line positions
   const positions = [
-    { id: 1, title: "Director", am: formatPerson("Valeria", "PX3829"), pm: formatPerson("") },
-    { id: 2, title: "Line Buster", am: formatPerson("Maksim", "PX1911"), pm: formatPerson("Maksim", "PX1911") },
-    { id: 3, title: "Drink & Utensils", am: formatPerson(""), pm: formatPerson("PIC", "PX1911"), pm2: formatPerson("") },
+    { id: 1, title: "Director", am: formatPerson("Valeria", "PX3829"), pm: formatPerson(""), focus: "Direct line operations", responsibility: "Manage line flow, coordinate with kitchen, ensure customer satisfaction" },
+    { id: 2, title: "Line Buster", am: formatPerson("Maksim", "PX1911"), pm: formatPerson("Maksim", "PX1911"), focus: "Break line bottlenecks", responsibility: "Keep line moving, help during rush periods, support all stations" },
+    { id: 3, title: "Drink & Utensils", am: formatPerson(""), pm: formatPerson("PIC", "PX1911"), pm2: formatPerson(""), focus: "Prepare drinks and utensils", responsibility: "Keep drink station and utensils stocked, prepare beverages" },
   ]
 
   const PositionCard = ({ position, fullWidth = false }) => (
@@ -20,47 +20,71 @@ export function LinePlan() {
         fullWidth ? 'col-span-1 md:col-span-3' : ''
       }`}
     >
-      <div className="font-semibold text-lg mb-4 pb-3 border-b border-border text-foreground">
+      <div className="font-semibold text-lg mb-2 text-foreground">
         {position.title}
       </div>
       
-      <div className="space-y-3">
-        <div className="flex items-center justify-between py-1.5">
-          <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-            {position.title === "Director"
-              ? "AM: 9:00-5:00"
-              : position.title === "Line Buster"
-                ? "AM: 9:00-5:00"
-                : position.title === "Drink & Utensils"
-                  ? "AM: 10:00-2:00"
-                  : "AM:"}
-          </span>
-          <span className="text-base font-semibold text-foreground">
+      {position.focus && (
+        <div className="text-sm text-muted-foreground mb-4 pb-3 border-b border-border">
+          {position.focus}
+        </div>
+      )}
+      
+      {!position.focus && (
+        <div className="mb-4 pb-3 border-b border-border"></div>
+      )}
+      
+      <div className="space-y-4">
+        <div>
+          <div className="flex items-center justify-between mb-1">
+            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Morning Shift</span>
+            <span className="text-sm text-foreground">
+              {position.title === "Director"
+                ? "09:00am-05:00pm"
+                : position.title === "Line Buster"
+                  ? "09:00am-05:00pm"
+                  : position.title === "Drink & Utensils"
+                    ? "10:00am-02:00pm"
+                    : ""}
+            </span>
+          </div>
+          <div className="text-base font-semibold text-foreground">
             {position.am || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
-          </span>
+          </div>
         </div>
         
-        <div className="flex items-center justify-between py-1.5">
-          <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-            {position.title === "Line Buster"
-              ? "PM: 5:00-10:00"
-              : position.title === "Drink & Utensils"
-                ? "PM: 2:00-7:00"
-                : "PM:"}
-          </span>
-          <span className="text-base font-semibold text-foreground">
+        <div>
+          <div className="flex items-center justify-between mb-1">
+            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Evening Shift</span>
+            <span className="text-sm text-foreground">
+              {position.title === "Line Buster"
+                ? "05:00pm-10:00pm"
+                : position.title === "Drink & Utensils"
+                  ? "02:00pm-07:00pm"
+                  : ""}
+            </span>
+          </div>
+          <div className="text-base font-semibold text-foreground">
             {position.pm || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
-          </span>
+          </div>
         </div>
         
         {position.title === "Drink & Utensils" && (
-          <div className="flex items-center justify-between py-1.5">
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-              PM2: 7:00-10:00
-            </span>
-            <span className="text-base font-semibold text-foreground">
+          <div>
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Evening Shift 2</span>
+              <span className="text-sm text-foreground">07:00pm-10:00pm</span>
+            </div>
+            <div className="text-base font-semibold text-foreground">
               {position.pm2 || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
-            </span>
+            </div>
+          </div>
+        )}
+        
+        {position.responsibility && (
+          <div className="pt-2">
+            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1">Responsibility:</div>
+            <div className="text-sm text-foreground">{position.responsibility}</div>
           </div>
         )}
       </div>
