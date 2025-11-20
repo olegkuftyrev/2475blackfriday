@@ -11,7 +11,7 @@ export function LinePlan() {
   const positions = [
     { id: 1, title: "Director", am: formatPerson("Valeria", "PX3829"), pm: formatPerson("") },
     { id: 2, title: "Line Buster", am: formatPerson("Maksim", "PX1911"), pm: formatPerson("Maksim", "PX1911") },
-    { id: 3, title: "Position 3", am: formatPerson(""), pm: formatPerson("") },
+    { id: 3, title: "Drink & Utensils", am: formatPerson(""), pm: formatPerson("") },
   ]
 
   const PositionCard = ({ position, fullWidth = false }) => (
@@ -55,9 +55,9 @@ export function LinePlan() {
   return (
     <div className="w-full">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold mb-2">Line Plan</h2>
+        <h2 className="text-2xl font-bold mb-2">Line & Lobby</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Line shift assignments
+          Line & Lobby shift assignments
         </p>
       </div>
 

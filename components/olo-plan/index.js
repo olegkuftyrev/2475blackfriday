@@ -9,8 +9,8 @@ export function OLOPlan() {
 
   // OLO (Online Order) positions
   const positions = [
-    { id: 1, title: "OLO Runner", am: formatPerson(""), pm: formatPerson("") },
-    { id: 2, title: "OLO Lobby", am: formatPerson(""), pm: formatPerson("") },
+    { id: 1, title: "OLO Runner", am: formatPerson("Vanessa"), pm: formatPerson("Vanessa") },
+    { id: 2, title: "OLO Deliver", am: formatPerson("Jamileth"), pm: formatPerson("Jamileth") },
     { id: 3, title: "OLO Table", am: formatPerson(""), pm: formatPerson("") },
   ]
 
@@ -27,7 +27,11 @@ export function OLOPlan() {
       <div className="space-y-3">
         <div className="flex items-center justify-between py-1.5">
           <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-            AM:
+            {position.title === "OLO Runner"
+              ? "AM: 11:00-5:00"
+              : position.title === "OLO Deliver"
+                ? "AM: 10:30-5:00"
+                : "AM:"}
           </span>
           <span className="text-base font-semibold text-foreground">
             {position.am || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
@@ -36,7 +40,11 @@ export function OLOPlan() {
         
         <div className="flex items-center justify-between py-1.5">
           <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-            PM:
+            {position.title === "OLO Runner"
+              ? "PM: 5:00-10:00"
+              : position.title === "OLO Deliver"
+                ? "PM: 5:00-10:00"
+                : "PM:"}
           </span>
           <span className="text-base font-semibold text-foreground">
             {position.pm || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
