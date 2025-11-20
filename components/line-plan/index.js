@@ -9,8 +9,8 @@ export function LinePlan() {
 
   // Line positions
   const positions = [
-    { id: 1, title: "Director", am: formatPerson("Valeria", "PX3829"), pm: formatPerson(""), focus: "Direct line operations", responsibility: "Manage line flow, coordinate with kitchen, ensure customer satisfaction" },
-    { id: 2, title: "Line Buster", am: formatPerson("Maksim", "PX1911"), pm: formatPerson("Maksim", "PX1911"), focus: "Break line bottlenecks", responsibility: "Keep line moving, help during rush periods, support all stations" },
+    { id: 1, title: "Director", am: formatPerson("Valeria", "PX3829"), pm: formatPerson(""), focus: "Navigate Guest and Manage the line", responsibility: "Manage line flow, Supply Line Buster" },
+    { id: 2, title: "Line Buster", am: formatPerson("Maksim", "PX1911"), pm: formatPerson("Maksim", "PX1911"), focus: "Break line bottlenecks", responsibility: "OFS Tablet, Sticker Notes, Menu" },
     { id: 3, title: "Drink & Utensils", am: formatPerson(""), pm: formatPerson("PIC", "PX1911"), pm2: formatPerson(""), focus: "Prepare drinks and utensils", responsibility: "Keep drink station and utensils stocked, prepare beverages" },
   ]
 
@@ -37,7 +37,7 @@ export function LinePlan() {
       <div className="space-y-4">
         <div>
           <div className="flex items-center justify-between mb-1">
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Morning Shift</span>
+            <span className="text-sm font-medium text-muted-foreground tracking-wide">Morning</span>
             <span className="text-sm text-foreground">
               {position.title === "Director"
                 ? "09:00am-05:00pm"
@@ -55,7 +55,7 @@ export function LinePlan() {
         
         <div>
           <div className="flex items-center justify-between mb-1">
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Evening Shift</span>
+            <span className="text-sm font-medium text-muted-foreground tracking-wide">Evening</span>
             <span className="text-sm text-foreground">
               {position.title === "Line Buster"
                 ? "05:00pm-10:00pm"
@@ -72,7 +72,7 @@ export function LinePlan() {
         {position.title === "Drink & Utensils" && (
           <div>
             <div className="flex items-center justify-between mb-1">
-              <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Evening Shift 2</span>
+              <span className="text-sm font-medium text-muted-foreground tracking-wide">Evening 2</span>
               <span className="text-sm text-foreground">07:00pm-10:00pm</span>
             </div>
             <div className="text-base font-semibold text-foreground">

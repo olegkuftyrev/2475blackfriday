@@ -42,7 +42,7 @@ export function FoHPlan() {
         {position.title === "Position 3" ? (
           <div>
             <div className="flex items-center justify-between mb-1">
-              <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Morning Shift</span>
+              <span className="text-sm font-medium text-muted-foreground tracking-wide">Morning</span>
               <span className="text-sm text-foreground">08:30am-08:00pm</span>
             </div>
             <div className="text-base font-semibold text-foreground">
@@ -53,7 +53,7 @@ export function FoHPlan() {
           <>
             <div>
               <div className="flex items-center justify-between mb-1">
-                <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Morning Shift</span>
+                <span className="text-sm font-medium text-muted-foreground tracking-wide">Morning</span>
                 <span className="text-sm text-foreground">
                   {position.title === "PIC"
                     ? "09:00am-05:00pm"
@@ -77,7 +77,7 @@ export function FoHPlan() {
             
             <div>
               <div className="flex items-center justify-between mb-1">
-                <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Evening Shift</span>
+                <span className="text-sm font-medium text-muted-foreground tracking-wide">Evening</span>
                 <span className="text-sm text-foreground">
                   {position.title === "PIC"
                     ? "05:00pm-09:00pm"

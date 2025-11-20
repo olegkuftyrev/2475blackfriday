@@ -21,8 +21,8 @@ export function BoHPlan() {
   // Left column: Sides, Fryer & Grill, Fry Cook, Stir Fry Cook
   // Right column: Dishes, Restock & Runner, Signal Lead
   const positions = [
-    { id: 1, title: "Sides", am: formatPerson("Luis"), pm: null, focus: "Make side dishes", responsibility: "Keep all side items ready and fresh throughout shift" },
-    { id: 4, title: "Dishes", am: formatPerson("Ming"), pm: formatPerson("Ken"), focus: "Wash dishes and clean", responsibility: "Maintain clean kitchen, wash all dishes and utensils" },
+    { id: 1, title: "Sides", am: formatPerson("Luis"), pm: null, focus: "Make M1, R1 & R2", responsibility: "Keep all side items ready and fresh throughout shift" },
+    { id: 4, title: "Dishes", am: formatPerson("Ming"), pm: formatPerson("Ken"), focus: "Wash dishes and clean", responsibility: "Maintain clean floors, dishes & utensils" },
     { id: 3, title: "Fryer & Grill", am: null, pm: null, focus: "Cook on fryer and grill", responsibility: "Prepare all fried and grilled food items to order" },
     { id: 6, title: "Restock & Runner", am: formatPerson("Day"), pm: formatPerson("Day"), focus: "Restock supplies and run food", responsibility: "Keep all stations supplied, run food to front" },
     { id: 5, title: "Fry Cook", am: formatPerson("Boon"), pm: formatPerson("Boon"), focus: "Fry food items", responsibility: "Prepare all fried dishes according to recipes" },
@@ -53,7 +53,7 @@ export function BoHPlan() {
       <div className="space-y-4">
         <div>
           <div className="flex items-center justify-between mb-1">
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Morning Shift</span>
+            <span className="text-sm font-medium text-muted-foreground tracking-wide">Morning</span>
             <span className="text-sm text-foreground">
               {position.title === "Prep & PIC"
                 ? "09:00am-05:00pm"
@@ -75,7 +75,7 @@ export function BoHPlan() {
         
         <div>
           <div className="flex items-center justify-between mb-1">
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Evening Shift</span>
+            <span className="text-sm font-medium text-muted-foreground tracking-wide">Evening</span>
             <span className="text-sm text-foreground">
               {position.title === "Prep & PIC"
                 ? "05:00pm-10:00pm"

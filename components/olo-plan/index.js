@@ -37,7 +37,7 @@ export function OLOPlan() {
       <div className="space-y-4">
         <div>
           <div className="flex items-center justify-between mb-1">
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Morning Shift</span>
+            <span className="text-sm font-medium text-muted-foreground tracking-wide">Morning</span>
             <span className="text-sm text-foreground">
               {position.title === "OLO Runner"
                 ? "11:00am-05:00pm"
@@ -53,7 +53,7 @@ export function OLOPlan() {
         
         <div>
           <div className="flex items-center justify-between mb-1">
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Evening Shift</span>
+            <span className="text-sm font-medium text-muted-foreground tracking-wide">Evening</span>
             <span className="text-sm text-foreground">
               {position.title === "OLO Runner"
                 ? "05:00pm-10:00pm"
