@@ -13,13 +13,24 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState('plans')
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background relative">
+      <div 
+        className="fixed inset-0 z-0 opacity-10 dark:opacity-5"
+        style={{
+          backgroundImage: 'url(/background-pattern.jpg)',
+          backgroundRepeat: 'repeat',
+          backgroundSize: 'auto',
+        }}
+      />
+      <div className="relative z-10">
       <div className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <h1 className="text-xl font-bold">Panda Express #2475</h1>
-          <ThemeToggle />
+          <div className="flex items-center gap-3">
+            <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
+            <ThemeToggle />
+          </div>
         </div>
-        <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
       </div>
       
       <div className="container mx-auto px-4 py-6 max-w-4xl">
@@ -69,6 +80,7 @@ export default function Home() {
             </div>
           </div>
         )}
+      </div>
       </div>
     </main>
   )

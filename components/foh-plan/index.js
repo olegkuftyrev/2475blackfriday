@@ -14,7 +14,7 @@ export function FoHPlan() {
     { id: 3, title: "Register 2", am: formatPerson("Ngan"), pm: formatPerson(""), focus: "Take orders and process payments", responsibility: "Greet customers, take orders, handle cash and card payments" },
     { id: 4, title: "Register 3", am: formatPerson("Hermela"), pm: formatPerson("Hermela"), focus: "Take orders and process payments", responsibility: "Greet customers, take orders, handle cash and card payments" },
     { id: 5, title: "Position 1", am: formatPerson("Joanna"), pm: formatPerson("Joanna"), focus: "Support front operations", responsibility: "Assist customers, maintain dining area, help with orders" },
-    { id: 6, title: "Position 2", am: formatPerson(""), pm: formatPerson("Alexa"), focus: "Support front operations", responsibility: "Assist customers, maintain dining area, help with orders" },
+    { id: 6, title: "Position 2", am: formatPerson("Alexa"), pm: formatPerson("Alexa"), focus: "Support front operations", responsibility: "Assist customers, maintain dining area, help with orders" },
     { id: 7, title: "Position 3", am: formatPerson("Aiperi"), pm: formatPerson(""), focus: "Support front operations", responsibility: "Assist customers, maintain dining area, help with orders" },
   ]
 
@@ -66,7 +66,7 @@ export function FoHPlan() {
                           : position.title === "Position 1"
                             ? "10:30am-05:00pm"
                             : position.title === "Position 2"
-                              ? "09:00am-02:00pm"
+                              ? "10:30am-05:00pm"
                               : ""}
                 </span>
               </div>
@@ -90,7 +90,7 @@ export function FoHPlan() {
                           : position.title === "Position 1"
                             ? "05:00pm-10:00pm"
                             : position.title === "Position 2"
-                              ? "02:00pm-10:00pm"
+                              ? "05:00pm-10:00pm"
                               : ""}
                 </span>
               </div>
