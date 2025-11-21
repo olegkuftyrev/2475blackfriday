@@ -49,7 +49,7 @@ export function LinePlan() {
             </span>
           </div>
           <div className="text-base font-semibold text-foreground">
-            {position.am || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
+            {position.am || <span className="support-request">SUPPORT REQUEST</span>}
           </div>
         </div>
         
@@ -65,7 +65,7 @@ export function LinePlan() {
             </span>
           </div>
           <div className="text-base font-semibold text-foreground">
-            {position.pm || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
+            {position.pm || <span className="support-request">SUPPORT REQUEST</span>}
           </div>
         </div>
         
@@ -76,7 +76,7 @@ export function LinePlan() {
               <span className="text-sm text-foreground">07:00pm-10:00pm</span>
             </div>
             <div className="text-base font-semibold text-foreground">
-              {position.pm2 || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
+              {position.pm2 || <span className="support-request">SUPPORT REQUEST</span>}
             </div>
           </div>
         )}

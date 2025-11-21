@@ -69,6 +69,16 @@
   }
   body {
     @apply bg-background text-foreground;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Smooth theme transition for all elements */
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.3s;
   }
 }
 
@@ -86,6 +96,63 @@
   input[type="checkbox"]:disabled {
     opacity: 1;
     cursor: default;
+  }
+
+  /* Support Request animation with neon glow */
+  @keyframes supportRequestPulse {
+    0%, 100% {
+      opacity: 1;
+      text-shadow: 
+        0 0 5px rgba(239, 68, 68, 0.8),
+        0 0 10px rgba(239, 68, 68, 0.6),
+        0 0 15px rgba(239, 68, 68, 0.4),
+        0 0 20px rgba(239, 68, 68, 0.2);
+    }
+    50% {
+      opacity: 0.7;
+      text-shadow: 
+        0 0 10px rgba(239, 68, 68, 1),
+        0 0 20px rgba(239, 68, 68, 0.8),
+        0 0 30px rgba(239, 68, 68, 0.6),
+        0 0 40px rgba(239, 68, 68, 0.4);
+    }
+  }
+
+  .support-request {
+    animation: supportRequestPulse 2s ease-in-out infinite;
+    color: rgb(239, 68, 68);
+    font-weight: 500;
+  }
+
+  /* Page transition animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+
+  .page-enter {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+
+  .page-exit {
+    animation: fadeOut 0.3s ease-in forwards;
   }
 }
 

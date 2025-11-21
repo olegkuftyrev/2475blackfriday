@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { Navigation } from '@/components/navigation'
 import { ItemsChecklist } from '@/components/items-checklist'
@@ -11,6 +11,19 @@ import { LinePlan } from '@/components/line-plan'
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('plans')
+  const [isTransitioning, setIsTransitioning] = useState(false)
+  const [displayTab, setDisplayTab] = useState('plans')
+
+  useEffect(() => {
+    if (activeTab !== displayTab) {
+      setIsTransitioning(true)
+      const timer = setTimeout(() => {
+        setDisplayTab(activeTab)
+        setIsTransitioning(false)
+      }, 300) // Match fadeOut duration
+      return () => clearTimeout(timer)
+    }
+  }, [activeTab, displayTab])
 
   return (
     <main className="min-h-screen bg-background relative">
@@ -34,52 +47,54 @@ export default function Home() {
       </div>
       
       <div className="container mx-auto px-4 py-6 max-w-4xl">
-        {activeTab === 'plans' && (
-          <div className="space-y-6">
-            <div className="mb-6">
-              <h2 className="text-3xl font-bold mb-2">Black Friday 2025 Readiness</h2>
-              <p className="text-muted-foreground">Restaurant #2475 Preparation Dashboard</p>
+        <div className={isTransitioning ? 'page-exit' : 'page-enter'}>
+          {displayTab === 'plans' && (
+            <div className="space-y-6">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold mb-2">Black Friday 2025 Readiness</h2>
+                <p className="text-muted-foreground">Restaurant #2475 Preparation Dashboard</p>
+              </div>
+              
+              <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
+                <BoHPlan />
+              </div>
+              
+              <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
+                <FoHPlan />
+              </div>
+              
+              <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
+                <OLOPlan />
+              </div>
+              
+              <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
+                <LinePlan />
+              </div>
             </div>
-            
-            <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
-              <BoHPlan />
-            </div>
-            
-            <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
-              <FoHPlan />
-            </div>
-            
-            <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
-              <OLOPlan />
-            </div>
-            
-            <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
-              <LinePlan />
-            </div>
-          </div>
-        )}
+          )}
 
-        {activeTab === 'checklist' && (
-          <div className="space-y-6">
-            <div className="mb-6">
-              <h2 className="text-3xl font-bold mb-2">Black Friday 2025 Readiness</h2>
-              <p className="text-muted-foreground">Restaurant #2475 Preparation Dashboard</p>
+          {displayTab === 'checklist' && (
+            <div className="space-y-6">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold mb-2">Black Friday 2025 Readiness</h2>
+                <p className="text-muted-foreground">Restaurant #2475 Preparation Dashboard</p>
+              </div>
+              
+              <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
+                <ItemsChecklist />
+              </div>
             </div>
-            
-            <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
-              <ItemsChecklist />
-            </div>
-          </div>
-        )}
+          )}
 
-        {activeTab === 'page3' && (
-          <div className="space-y-6">
-            <div className="mb-6">
-              <h2 className="text-3xl font-bold mb-2">Store Organization Checklist</h2>
-              <p className="text-muted-foreground">Restaurant #2475 Store Organization</p>
+          {displayTab === 'page3' && (
+            <div className="space-y-6">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold mb-2">Store Organization Checklist</h2>
+                <p className="text-muted-foreground">Restaurant #2475 Store Organization</p>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
       </div>
     </main>

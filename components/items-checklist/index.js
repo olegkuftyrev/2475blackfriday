@@ -71,10 +71,13 @@ export function ItemsChecklist() {
           </span>
           <span className="text-muted-foreground">({progressPercentage}%)</span>
         </div>
-        <div className="w-full bg-muted rounded-full h-2 mt-2">
+        <div className="w-full bg-muted rounded-full h-2 mt-2 overflow-hidden">
           <div 
-            className="bg-accent h-2 rounded-full transition-all duration-300"
-            style={{ width: `${progressPercentage}%` }}
+            className="bg-accent h-2 rounded-full transition-all duration-700 ease-out"
+            style={{ 
+              width: `${progressPercentage}%`,
+              transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
+            }}
           />
         </div>
       </div>

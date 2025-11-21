@@ -47,7 +47,7 @@ export function OLOPlan() {
             </span>
           </div>
           <div className="text-base font-semibold text-foreground">
-            {position.am || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
+            {position.am || <span className="support-request">SUPPORT REQUEST</span>}
           </div>
         </div>
         
@@ -63,7 +63,7 @@ export function OLOPlan() {
             </span>
           </div>
           <div className="text-base font-semibold text-foreground">
-            {position.pm || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
+            {position.pm || <span className="support-request">SUPPORT REQUEST</span>}
           </div>
         </div>
         

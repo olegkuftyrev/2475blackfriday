@@ -46,7 +46,7 @@ export function FoHPlan() {
               <span className="text-sm text-foreground">08:30am-08:00pm</span>
             </div>
             <div className="text-base font-semibold text-foreground">
-              {position.am || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
+              {position.am || <span className="support-request">SUPPORT REQUEST</span>}
             </div>
           </div>
         ) : (
@@ -71,7 +71,7 @@ export function FoHPlan() {
                 </span>
               </div>
               <div className="text-base font-semibold text-foreground">
-                {position.am || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
+                {position.am || <span className="support-request">SUPPORT REQUEST</span>}
               </div>
             </div>
             
@@ -95,7 +95,7 @@ export function FoHPlan() {
                 </span>
               </div>
               <div className="text-base font-semibold text-foreground">
-                {position.pm || <span className="text-red-500 font-normal">SUPPORT REQUEST</span>}
+                {position.pm || <span className="support-request">SUPPORT REQUEST</span>}
               </div>
             </div>
           </>
