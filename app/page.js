@@ -12,6 +12,7 @@ import { SaucesCondiments } from '@/components/sauces-condiments'
 import { LongTables } from '@/components/long-tables'
 import { StoreOrganization } from '@/components/store-organization'
 import { WalkInCooler } from '@/components/walk-in-cooler'
+import { StoreSupport } from '@/components/store-support'
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('plans')
@@ -73,6 +74,10 @@ export default function Home() {
               
               <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
                 <LinePlan />
+              </div>
+              
+              <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
+                <StoreSupport />
               </div>
             </div>
           )}

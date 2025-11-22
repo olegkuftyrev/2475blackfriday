@@ -58,6 +58,14 @@ export function ItemsChecklist() {
     topContributors[0].count > 0 && 
     (topContributors.length === 1 || topContributors[0].count > topContributors[1].count)
 
+  // Function to get emoji for position
+  const getPositionEmoji = (index) => {
+    if (index === 0) return '👑' // 1st - crown
+    if (index === 1) return '💎' // 2nd - diamond
+    if (index === 2) return '💠' // 3rd - diamond shape
+    return null
+  }
+
   return (
     <div className="w-full">
       <div className="mb-4">
@@ -134,14 +142,14 @@ export function ItemsChecklist() {
                         {getDisplayName(item.item)}
                       </label>
                       {item.contributor && (
-                        <span className="inline-block mt-1.5 text-xs text-muted-foreground">
+                        <div className="block mt-1.5 text-xs text-muted-foreground">
                           Contributor: {item.contributor}
-                        </span>
+                        </div>
                       )}
                       {item.note && (
-                        <span className="inline-block mt-1.5 text-xs text-red-500 dark:text-red-400 font-medium">
+                        <div className="block mt-1.5 text-xs text-red-500 dark:text-red-400 font-medium">
                           {item.note}
-                        </span>
+                        </div>
                       )}
                     </div>
                   </div>
@@ -164,9 +172,9 @@ export function ItemsChecklist() {
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  {index === 0 && (
-                    <div className="text-2xl" aria-label="Top contributor">
-                      👑
+                  {getPositionEmoji(index) && (
+                    <div className="text-2xl" aria-label={`${index === 0 ? 'Top' : index === 1 ? 'Second' : 'Third'} contributor`}>
+                      {getPositionEmoji(index)}
                     </div>
                   )}
                   <div>

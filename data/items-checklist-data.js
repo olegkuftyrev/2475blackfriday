@@ -8,8 +8,8 @@ export const itemsChecklistData = [
   {
     id: 2,
     item: "Meat Cart (BOH)",
-    checked: false,
-    contributor: null
+    checked: true,
+    contributor: "Katelyn"
   },
   {
     id: 3,
@@ -63,8 +63,9 @@ export const itemsChecklistData = [
   {
     id: 13,
     item: "Gas Handle x1 (BOH)",
-    checked: false,
-    contributor: null
+    checked: true,
+    contributor: null,
+    note: "in the vehicle"
   },
   {
     id: 14,
@@ -86,9 +87,10 @@ export const itemsChecklistData = [
   },
   {
     id: 17,
-    item: "Line Queue / dividers x15 (FOH)",
+    item: "Stanchions (FOH)",
     checked: false,
-    contributor: null
+    contributor: "Aaron",
+    note: "pending"
   },
   {
     id: 18,
@@ -123,20 +125,23 @@ export const itemsChecklistData = [
   {
     id: 23,
     item: "Sticky Notes (FOH)",
-    checked: false,
-    contributor: null
+    checked: true,
+    contributor: null,
+    note: "36x1000 has beed ordered"
   },
   {
     id: 24,
     item: "4 Power Banks (FOH)",
-    checked: false,
-    contributor: null
+    checked: true,
+    contributor: null,
+    note: "2 extra radios are in place"
   },
   {
     id: 25,
     item: "4 Radios (FOH)",
-    checked: false,
-    contributor: null
+    checked: true,
+    contributor: null,
+    note: "has been ordered"
   },
   {
     id: 26,
@@ -147,6 +152,12 @@ export const itemsChecklistData = [
   {
     id: 27,
     item: "20 Tongs (FOH)",
+    checked: false,
+    contributor: null
+  },
+  {
+    id: 28,
+    item: "5 Metal rings (FOH)",
     checked: false,
     contributor: null
   }
