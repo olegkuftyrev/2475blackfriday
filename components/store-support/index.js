@@ -73,7 +73,7 @@ export function StoreSupport() {
   return (
     <div className="w-full">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold mb-2">Store Support</h2>
+        <h2 className="text-2xl font-bold mb-2">Supporting Team</h2>
         <p className="text-sm text-muted-foreground mb-4">
           Stores providing support and number of associates
         </p>
