@@ -8,6 +8,7 @@ import { BoHPlan } from '@/components/boh-plan'
 import { FoHPlan } from '@/components/foh-plan'
 import { OLOPlan } from '@/components/olo-plan'
 import { LinePlan } from '@/components/line-plan'
+import { StoreOrganization } from '@/components/store-organization'
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('plans')
@@ -91,6 +92,10 @@ export default function Home() {
               <div className="mb-6">
                 <h2 className="text-3xl font-bold mb-2">Store Organization Checklist</h2>
                 <p className="text-muted-foreground">Restaurant #2475 Store Organization</p>
+              </div>
+              
+              <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
+                <StoreOrganization />
               </div>
             </div>
           )}
