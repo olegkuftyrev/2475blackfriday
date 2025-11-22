@@ -138,6 +138,11 @@ export function ItemsChecklist() {
                           Contributor: {item.contributor}
                         </span>
                       )}
+                      {item.note && (
+                        <span className="inline-block mt-1.5 text-xs text-red-500 dark:text-red-400 font-medium">
+                          {item.note}
+                        </span>
+                      )}
                     </div>
                   </div>
                 ))}

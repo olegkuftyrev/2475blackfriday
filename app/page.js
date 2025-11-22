@@ -8,7 +8,10 @@ import { BoHPlan } from '@/components/boh-plan'
 import { FoHPlan } from '@/components/foh-plan'
 import { OLOPlan } from '@/components/olo-plan'
 import { LinePlan } from '@/components/line-plan'
+import { SaucesCondiments } from '@/components/sauces-condiments'
+import { LongTables } from '@/components/long-tables'
 import { StoreOrganization } from '@/components/store-organization'
+import { WalkInCooler } from '@/components/walk-in-cooler'
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('plans')
@@ -96,6 +99,18 @@ export default function Home() {
               
               <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
                 <StoreOrganization />
+              </div>
+              
+              <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
+                <SaucesCondiments />
+              </div>
+              
+              <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
+                <LongTables />
+              </div>
+              
+              <div className="p-4 md:p-6 rounded-lg border border-border bg-card">
+                <WalkInCooler />
               </div>
             </div>
           )}

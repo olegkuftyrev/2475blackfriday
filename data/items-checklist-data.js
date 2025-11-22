@@ -30,18 +30,6 @@ export const itemsChecklistData = [
     contributor: null
   },
   {
-    id: 6,
-    item: "Rice Cabinet (BOH)",
-    checked: false,
-    contributor: null
-  },
-  {
-    id: 7,
-    item: "Rice Cooler (BOH)",
-    checked: false,
-    contributor: null
-  },
-  {
     id: 8,
     item: "Extra Ice (BOH)",
     checked: false,
@@ -57,12 +45,13 @@ export const itemsChecklistData = [
     id: 10,
     item: "Electric Rice Cooker (BOH)",
     checked: false,
-    contributor: null
+    contributor: null,
+    note: "Extra Gas Cooker in the Vehicle"
   },
   {
     id: 11,
     item: "Large Stapler for OLO (FOH)",
-    checked: false,
+    checked: true,
     contributor: null
   },
   {
@@ -92,7 +81,7 @@ export const itemsChecklistData = [
   {
     id: 16,
     item: "3x Power Strip (FoH/Boh)",
-    checked: false,
+    checked: true,
     contributor: null
   },
   {
