@@ -1,6 +1,16 @@
 "use client"
 
 export function StoreSupport() {
+  // Function to get ordinal suffix (1st, 2nd, 3rd, etc.)
+  const getOrdinalSuffix = (n) => {
+    const j = n % 10
+    const k = n % 100
+    if (j === 1 && k !== 11) return n + 'st'
+    if (j === 2 && k !== 12) return n + 'nd'
+    if (j === 3 && k !== 13) return n + 'rd'
+    return n + 'th'
+  }
+
   // Собираем данные о магазинах и количестве людей
   // Из BoH Plan
   const bohPeople = [
@@ -104,6 +114,9 @@ export function StoreSupport() {
                 )}
                 <div>
                   <div className={`font-semibold text-lg ${index < 3 ? 'text-yellow-700 dark:text-yellow-400' : 'text-foreground'}`}>
+                    <span className="text-muted-foreground font-normal mr-2">
+                      {getOrdinalSuffix(index + 1)}
+                    </span>
                     {storeInfo.store}
                   </div>
                 </div>

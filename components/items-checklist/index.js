@@ -66,6 +66,16 @@ export function ItemsChecklist() {
     return null
   }
 
+  // Function to get ordinal suffix (1st, 2nd, 3rd, etc.)
+  const getOrdinalSuffix = (n) => {
+    const j = n % 10
+    const k = n % 100
+    if (j === 1 && k !== 11) return n + 'st'
+    if (j === 2 && k !== 12) return n + 'nd'
+    if (j === 3 && k !== 13) return n + 'rd'
+    return n + 'th'
+  }
+
   return (
     <div className="w-full">
       <div className="mb-4">
@@ -179,6 +189,9 @@ export function ItemsChecklist() {
                   )}
                   <div>
                     <div className={`font-semibold ${index === 0 ? 'text-yellow-700 dark:text-yellow-400' : ''}`}>
+                      <span className="text-muted-foreground font-normal mr-2">
+                        {getOrdinalSuffix(index + 1)}
+                      </span>
                       {contributor.name}
                     </div>
                     {index === 0 && (
